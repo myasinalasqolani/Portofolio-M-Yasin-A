@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070b0d" />
+    <meta
+      name="description"
+      content="Portofolio M Yasin Al-Asqalani — Front-End Developer dan desainer grafis dari Cianjur."
+    />
+    <title>M Yasin Al-Asqalani — Front-End Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav wrap" aria-label="Navigasi utama">
+        <a class="brand" href="#home" aria-label="Kembali ke halaman utama"
+          >MY PORTOFOLIO.</a
+        >
+        <button
+          class="menu-button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          ☰
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#work">Karya</a>
+          <a href="#about">Tentang</a>
+          <a href="#journey">Perjalanan</a>
+          <a class="nav-cta" href="#contact">Hubungi saya ↗</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-map">
+          <div
+            class="maplibre-map"
+            id="world-map"
+            role="region"
+            aria-label="Peta dunia interaktif. Seret untuk menjelajah dan perbesar untuk melihat nama negara serta kota."
+          ></div>
+          <canvas class="globe-canvas" aria-hidden="true"></canvas>
+          <div class="map-readout">
+            <span>WORLD MAP</span><span id="zulu-time">UTC --:--:--</span>
+          </div>
+          <div
+            class="map-status"
+            id="map-status"
+            role="status"
+            aria-live="polite"
+          >
+            Memuat peta dunia…
+          </div>
+          <div class="map-coordinates" id="map-hint">
+            3D · SERET UNTUK MEMUTAR · ZOOM UNTUK LABEL NEGARA/KOTA
+          </div>
+        </div>
+        <div class="map-toolbar">
+          <div
+            class="map-control-group"
+            role="group"
+            aria-label="Proyeksi peta"
+          >
+            <button
+              type="button"
+              data-map-projection="globe"
+              aria-pressed="true"
+              disabled
+            >
+              3D
+            </button>
+            <button
+              type="button"
+              data-map-projection="mercator"
+              aria-pressed="false"
+              disabled
+            >
+              2D
+            </button>
+          </div>
+          <div class="map-control-group" role="group" aria-label="Lapisan peta">
+            <button
+              type="button"
+              data-map-style="map"
+              aria-pressed="true"
+              disabled
+            >
+              MAP
+            </button>
+            <button
+              type="button"
+              data-map-style="satellite"
+              aria-pressed="false"
+              disabled
+            >
+              SATELIT
+            </button>
+          </div>
+          <button class="map-reset" type="button" disabled>
+            KEMBALI KE GLOBE
+          </button>
+          <button
+            class="profile-toggle"
+            type="button"
+            aria-expanded="true"
+            aria-controls="profile-card"
+            aria-label="Tutup kartu identitas"
+          >
+            <span>IDENTITY / 001</span>
+            <span class="profile-toggle-icon" aria-hidden="true">−</span>
+          </button>
+        </div>
+        <div class="hero-inner wrap">
+          <div class="hero-copy">
+            <div class="eyebrow">Front-End Developer · Graphic Designer</div>
+            <h1>M Yasin <span>Al-Asqalani.</span></h1>
+            <p class="intro">
+              Saya menjembatani ide visual dari CorelDRAW menjadi antarmuka web
+              app yang interaktif dan ringan diakses. Fokus saya: tampilan yang
+              rapi sekaligus mudah dipahami.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#work">LIHAT KARYA ↓</a>
+              <a class="button secondary" href="#contact">KONTAK ↗</a>
+            </div>
+          </div>
+          <div class="profile-panel">
+            <aside
+              class="profile-card"
+              id="profile-card"
+              aria-label="Ringkasan profil"
+            >
+              <div class="card-top">
+                <div class="eyebrow">FRONT-END · GRAPHIC DESIGN</div>
+                <img
+                  class="card-photo"
+                  src="assets/M%20Yasin%20A.jpeg"
+                  alt="Foto M Yasin Al-Asqalani"
+                  width="62"
+                  height="62"
+                />
+                <div class="card-name">M Yasin Al-Asqalani</div>
+                <div class="card-location">Cianjur, Indonesia · UTC+7</div>
+              </div>
+              <div class="stats">
+                <div class="stat">
+                  <strong>03</strong><span>PROYEK UNGGULAN</span>
+                </div>
+                <div class="stat"><strong>23</strong><span>TAHUN</span></div>
+                <div class="stat">
+                  <strong>WEB</strong><span>FOKUS FRONT-END</span>
+                </div>
+                <div class="stat">
+                  <strong>UTC+7</strong><span>CIANJUR</span>
+                </div>
+              </div>
+              <div class="stack">
+                <div class="stack-label">TOOLS & TEKNOLOGI</div>
+                <div class="tags">
+                  <span class="tag">HTML</span><span class="tag">CSS</span
+                  ><span class="tag">JavaScript</span
+                  ><span class="tag">CorelDRAW</span>
+                </div>
+              </div>
+              <div class="availability">
+                FRONT-END DEVELOPMENT · GRAPHIC DESIGN
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-label="Fokus dan keahlian">
+        <div class="ticker-track" aria-hidden="true">
+          <span>FRONT-END DEVELOPMENT</span><b>✳</b><span>DESAIN GRAFIS</span
+          ><b>✳</b><span>WEB APP RESPONSIF</span><b>✳</b><span>CORELDRAW</span
+          ><b>✳</b> <span>FRONT-END DEVELOPMENT</span><b>✳</b
+          ><span>DESAIN GRAFIS</span><b>✳</b><span>WEB APP RESPONSIF</span
+          ><b>✳</b><span>CORELDRAW</span><b>✳</b>
+        </div>
+      </div>
+
+      <section class="section wrap" id="work">
+        <div class="eyebrow">01 / PORTOFOLIO</div>
+        <div class="section-heading">
+          <h2>Karya Unggulan.</h2>
+          <p>
+            Kumpulan karya web app dan desain grafis, termasuk dokumentasi
+            proses produksi cetak.
+          </p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter kategori proyek">
+          <button class="filter" aria-pressed="true" data-filter="all">
+            Semua
+          </button>
+          <button class="filter" aria-pressed="false" data-filter="web">
+            Web App
+          </button>
+          <button class="filter" aria-pressed="false" data-filter="design">
+            Graphic Designer
+          </button>
+          <button class="filter" aria-pressed="false" data-filter="vector">
+            Vector Illustration/Art
+          </button>
+        </div>
+        <div class="projects">
+          <article class="project" data-category="web">
+            <div
+              class="project-art"
+              aria-label="Ilustrasi antarmuka Sistem Informasi PAUD ATTHOHIRIYYAH"
+            >
+              <div class="mock-window">
+                <div class="mock-bar">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+                <div class="mock-body">
+                  <div class="mock-block"></div>
+                  <div class="mock-lines">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </div>
+              <div class="ticker-track" aria-hidden="true">
+                <div class="ticker-content">
+                  <div class="ticker-sequence">
+                    <span>01 — SCHOOL INFORMATION SYSTEM</span><b>✳</b>
+                    <span>PAUD ATTHOHIRIYYAH CIANJUR</span><b>✳</b>
+                    <span>WEBSITE TK/KB/PAUD</span><b>✳</b>
+                    <span
+                      >Jl. Perintis Kemerdekaan, Sayang, Kec. Cianjur, Kabupaten
+                      Cianjur, Jawa Barat 43213</span
+                    ><b>✳</b>
+                  </div>
+                  <div class="ticker-sequence">
+                    <span>01 — SCHOOL INFORMATION SYSTEM</span><b>✳</b>
+                    <span>PAUD ATTHOHIRIYYAH CIANJUR</span><b>✳</b>
+                    <span>WEBSITE TK/KB/PAUD</span><b>✳</b>
+                    <span
+                      >Jl. Perintis Kemerdekaan, Sayang, Kec. Cianjur, Kabupaten
+                      Cianjur, Jawa Barat 43213</span
+                    ><b>✳</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>WEB APP · PROYEK NYATA</span>
+                <span>2025–2026</span>
+              </div>
+              <h3>Sistem Informasi & Portal Profil PAUD ATTHOHIRIYYAH</h3>
+              <p>
+                Web app responsif untuk digitalisasi informasi akademik, galeri
+                kegiatan harian, dan alur pendaftaran siswa baru (PPDB).
+                Dilengkapi dashboard pengelolaan data agar mudah diakses pihak
+                sekolah maupun orang tua melalui ponsel dan desktop.
+              </p>
+              <div class="project-bottom">
+                <div class="tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Tanyakan proyek PAUD ATTHOHIRIYYAH"
+                >
+                  TANYAKAN ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="project" data-category="design">
+            <div
+              class="project-art project-photo"
+              aria-label="Foto dokumentasi desain grafis dan produksi cetak digital"
+            >
+              <img
+                src="assets/Onyx%20RIP%20Center.jpeg"
+                alt="Tampilan lanskap desktop kerja desain dan produksi cetak digital."
+                decoding="async"
+              />
+              <div class="ticker-track" aria-hidden="true">
+                <div class="ticker-content">
+                  <div class="ticker-sequence">
+                    <span>02 — DIGITAL PRINT PRODUCTION</span><b>✳</b>
+                    <span>OPERATOR PERCETAKAN</span><b>✳</b>
+                    <span>PRINT PRO DIGITAL PRINTING</span><b>✳</b>
+                    <span>ONYX RIP CENTER</span><b>✳</b>
+                  </div>
+                  <div class="ticker-sequence">
+                    <span>02 — DIGITAL PRINT PRODUCTION</span><b>✳</b>
+                    <span>OPERATOR PERCETAKAN</span><b>✳</b>
+                    <span>PRINT PRO DIGITAL PRINTING</span><b>✳</b>
+                    <span>ONYX RIP CENTER</span><b>✳</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>GRAPHIC DESIGNER · PRODUCTION</span>
+                <span>2021–2023</span>
+              </div>
+              <h3>Graphic Design & Digital Production</h3>
+              <p>
+                Proses dari perancangan desain dengan CorelDRAW dan Photoshop,
+                pengaturan cetak serta manajemen warna di Onyx RIP, hingga
+                pengoperasian mesin dan finishing produk.
+              </p>
+              <div class="project-bottom">
+                <div class="tags">
+                  <span class="tag">CorelDRAW</span>
+                  <span class="tag">Operator</span>
+                  <span class="tag">Onyx RIP</span>
+                </div>
+                <a
+                  class="project-link"
+                  href="#journey"
+                  aria-label="Lihat pengalaman Graphic Designer"
+                >
+                  PENGALAMAN ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="project" data-category="vector">
+            <div
+              class="project-art wpap-art"
+              role="img"
+              aria-label="Ilustrasi vektor WPAP karya M Yasin Al-Asqalani"
+            >
+              <img
+                class="wpap-portrait"
+                src="assets/WPAP%20M%20Yasin%20Transparan.png"
+                alt=""
+                decoding="async"
+              />
+              <div class="ticker-track" aria-hidden="true">
+                <div class="ticker-content">
+                  <div class="ticker-sequence">
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                  </div>
+                  <div class="ticker-sequence">
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                    <span>03 — WPAP VECTOR PORTRAIT</span><b>✳</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>VECTOR ILLUSTRATION / ART</span>
+                <span>CORELDRAW</span>
+              </div>
+              <h3>Ilustrasi Vektor WPAP — Portrait Art</h3>
+              <p>
+                Karya ilustrasi digital bergaya Wedha's Pop Art Portrait (WPAP)
+                yang dibangun sepenuhnya menggunakan teknik vektor geometris di
+                CorelDRAW. Mengolah foto potret menjadi susunan bidang faset
+                poligonal tanpa garis lengkung (<em>non-curve</em>) dengan
+                eksplorasi palet warna kontras tinggi untuk menciptakan dimensi
+                pencahayaan dan karakter wajah yang tegas.
+              </p>
+              <div class="project-bottom">
+                <div class="tags">
+                  <span class="tag">WPAP</span>
+                  <span class="tag">Vector Art</span>
+                  <span class="tag">CorelDRAW</span>
+                </div>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Tanyakan karya ilustrasi vektor WPAP"
+                >
+                  TANYAKAN ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="eyebrow">02 / TENTANG SAYA</div>
+          <div class="section-heading"><h2>Kenali saya.</h2></div>
+          <div class="about-grid">
+            <div class="about-mark" aria-hidden="true">
+              <img
+                class="about-mark-photo"
+                src="assets/M%20Yasin%20A%20Kotak%20Transparan.png"
+                alt=""
+                decoding="async"
+              />
+              <img
+                class="about-mark-wpap"
+                src="assets/WPAP%20M%20Yasin%20Transparan.png"
+                alt=""
+                decoding="async"
+              />
+            </div>
+            <div class="about-copy">
+              <h3>
+                Menjembatani ide visual menjadi pengalaman web yang interaktif.
+              </h3>
+              <p>
+                Saya <strong>M Yasin Al-Asqalani</strong> — Front-End Developer
+                dan desainer grafis dengan latar belakang Teknik Informatika.
+                Saya biasa mengubah ide visual dari CorelDRAW menjadi antarmuka
+                web app yang interaktif dan ringan diakses.
+              </p>
+              <p>
+                Fokus saya sederhana: memastikan setiap tampilan terlihat rapi
+                secara estetika sekaligus mudah dipahami oleh pengguna akhir.
+              </p>
+              <div class="details">
+                <div class="detail">
+                  <span>LOKASI</span><strong>Cianjur, Indonesia</strong>
+                </div>
+                <div class="detail">
+                  <span>USIA</span><strong>23 tahun</strong>
+                </div>
+                <div class="detail">
+                  <span>FOKUS</span><strong>Front-End · Desain Grafis</strong>
+                </div>
+                <div class="detail">
+                  <span>PENDIDIKAN</span><strong>S1 Teknik Informatika</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="journey">
+        <div class="eyebrow">03 / PERJALANAN</div>
+        <div class="section-heading">
+          <h2>Terus bertumbuh.</h2>
+          <p>
+            Riwayat pendidikan dan pengalaman yang membentuk keterampilan teknis
+            serta visual saya.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-year">2021 — SEKARANG</div>
+            <div>
+              <h3>
+                S1 Teknik Informatika - Universitas Kebangsaan Republik
+                Indonesia
+              </h3>
+              <p>
+                Fokus pada pengembangan web front-end dan full-stack, rekayasa
+                perangkat lunak, serta basis data.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2021 — 2023</div>
+            <div>
+              <h3>
+                Graphic Designer & Production Specialist — Print Pro Digital &
+                Sublim Printing (Cianjur)
+              </h3>
+              <p>
+                Menangani alur produksi secara menyeluruh (<em>end-to-end</em>),
+                mulai dari perancangan desain grafis (CorelDRAW & Photoshop),
+                pengaturan cetak dan manajemen warna menggunakan
+                <strong>Onyx RIP</strong>, pengoperasian mesin cetak digital &
+                sublimasi, hingga proses <em>finishing</em> produk siap pakai.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2018 — 2021</div>
+            <div>
+              <h3>SMKN 2 Cilaku Cianjur - Teknik Komputer dan Jaringan</h3>
+              <p>
+                Pendidikan menengah kejuruan; mendalami dasar teknis, perakitan
+                perangkat keras komputer, dan desain grafis.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2016 — 2018</div>
+            <div>
+              <h3>MTsN 5 Cianjur</h3>
+              <p>Pendidikan menengah pertama.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2010 — 2016</div>
+            <div>
+              <h3>SDN Ibu Dewi 5 Cianjur</h3>
+              <p>Pendidikan dasar.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <div class="eyebrow">04 / MARI TERHUBUNG</div>
+          <h2>Punya ide menarik?</h2>
+          <p class="contact-copy">
+            Tertarik bekerja sama atau ingin berdiskusi tentang web app dan
+            desain? Hubungi saya melalui email atau LinkedIn.
+          </p>
+          <div class="contact-row">
+            <a class="button" href="mailto:muhammadyasinalasqolani@gmail.com"
+              >KIRIM EMAIL ↗</a
+            >
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/myasinalasqolani"
+              target="_blank"
+              rel="noreferrer"
+              >LINKEDIN ↗</a
+            >
+            <a
+              class="button secondary"
+              href="https://wa.me/087826490648"
+              target="_blank"
+              rel="noreferrer"
+              >WHATSAPP ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner wrap">
+        <span
+          >© <span id="year"></span> M Yasin Al-Asqalani · Cianjur,
+          Indonesia.</span
+        >
+        <div class="footer-links">
+          <a href="#home">Kembali ke atas ↑</a
+          ><a
+            href="https://github.com/myasinalasqolani"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub ↗</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="assets/globe-geodata.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js"
+    ></script>
+    <script defer src="assets/js/main.js"></script>
+  </body>
+</html>
